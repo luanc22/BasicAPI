@@ -19,9 +19,10 @@ namespace BasicAPI.Controllers
 
         // GET: api/user
         [HttpGet]
-        public List<User> Get()
+        public IActionResult Get()
         {
-            return users;
+            var result = new OkObjectResult(new { message = "200 OK", currentDate = DateTime.Now });
+            return result;
         }
 
         // GET api/user/2
